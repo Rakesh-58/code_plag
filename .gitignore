@@ -31,9 +31,13 @@ Thumbs.db
 
 # Model files / large data
 *.pt
+*.pth
 *.h5
 *.ckpt
 *.pkl
+*.npz
+*.npy
+*.png
 
 #Dataset
 raw/
