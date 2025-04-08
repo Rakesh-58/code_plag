@@ -46,4 +46,4 @@ for i in lst1:
     if(j==20):
         break
 
-np.savez("test.npz", **embeddings)
+np.savez("embeddings/test.npz", **embeddings)

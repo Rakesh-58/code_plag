@@ -42,3 +42,7 @@ Thumbs.db
 #Dataset
 raw/
 template-free/
+
+#Others
+models/
+embeddings/
