@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Code Plagiarism Checker</h2>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="font-weight-bold">Code Snippet 1</label>
+        <textarea class="form-control code-box" rows="15" [(ngModel)]="code1" placeholder="Paste first code snippet here..."></textarea>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="font-weight-bold">Code Snippet 2</label>
+        <textarea class="form-control code-box" rows="15" [(ngModel)]="code2" placeholder="Paste second code snippet here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <button class="btn btn-primary btn-lg" (click)="checkPlagiarism()">
+      <i class="fas fa-check-circle mr-2"></i>Check Similarity
+    </button>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger mt-4 text-center">{{ error }}</div>
+
+  <div *ngIf="result !== null" class="result-box mt-4 text-center p-3" 
+       [class.similar]="result === 1" [class.not-similar]="result === 0">
+    <h4 class="result-title">
+      <i class="fas" [class.fa-check]="result === 0" [class.fa-exclamation-triangle]="result === 1"></i>
+      {{ result === 1 ? 'Potential Plagiarism Detected' : 'No Plagiarism Detected' }}
+    </h4>
+    <!-- <div class="result-confidence">
+      Similarity Confidence: <strong>{{ similarity | number: '1.2-2' }}%</strong>
+    </div> -->
+    <div class="result-description mt-2">
+      {{ result === 1 ? 'The code snippets show significant similarity.' : 'The code snippets appear to be original.' }}
+    </div>
+  </div>
+</div>

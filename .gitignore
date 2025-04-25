@@ -10,6 +10,7 @@ venv/
 
 # VSCode settings
 .vscode/
+.angular/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
@@ -46,3 +47,4 @@ template-free/
 #Others
 models/
 embeddings/
+package-lock.json
